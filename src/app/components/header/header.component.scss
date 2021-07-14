@@ -1,0 +1,52 @@
+.mat-toolbar {
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #061844, #030527) !important;
+    .toolbarInner {
+        width: 100%;
+        align-items: center !important;
+        .logo {
+            padding-top: 0.6rem;
+            img {
+                height: 46px;
+                margin: 8px 0px 8px 0px !important;
+            }
+        }
+        .headerdrop {
+            align-items: right !important;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px;
+            img {
+                height: 24px;
+                margin-right: 10px;
+            }
+            .headerRight {
+                img {
+                    height: 32px;
+                    width: 32px;
+                    border: 1px solid #e6eef5;
+                    border-radius: 100%;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .drope {
+                    width: 50%;
+                    justify-content: flex-end;
+                    padding: 0 !important;
+                    color: #e6eef5;
+                    font-size: 12px;
+                    font-weight: bold;
+                    font-family: "Montserrat", sans-serif;
+                    button {
+                        padding-left: 2px;
+                        padding-right: 8px;
+                        font-size: 13px;
+                        font-weight: bold;
+                        font-family: "Montserrat", sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

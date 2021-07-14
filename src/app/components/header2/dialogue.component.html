@@ -1,0 +1,70 @@
+<div class="mainDiv" fxFlex.gt-sm="100%">
+   
+    <div class="divTop" fxLayout="row" fxLayoutAlign="space-between">
+        
+        <p fxLayoutAlign="center center">  <img src="/assets/images/add-icon.svg" alt=""> Catogery</p>
+        <button class="close" class="newbtn" mat-button mat-dialog-close>X</button>
+    </div>
+    <div>
+        <mat-tab-group [disableRipple]="true" animationDuration="0ms">
+            <mat-tab fxLayoutGap="20px" label="GENERAL INFO"
+                fxLayout="column">
+                <div style="position: relative;" fxFlex.gt-sm="100%" fxLayoutGap="20px" 
+                fxLayout="row">
+                    <div fxLayout="column" fxFlex.gt-sm="20%">
+                        <p style="margin-top: 0; color: white; font-family: 'Montserrat', sans-serif;
+                        font-size: 12px;">Language</p>
+                        <mat-form-field>
+                            <mat-select [(value)]="selectedFood">
+                                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div fxLayout="column" style="width: 100%; ">
+                        <p style="margin-top: 0; color: white; font-family: 'Montserrat', sans-serif;
+                        font-size: 12px;">Category name</p>
+                        <mat-form-field style="margin-left: 20px; width: 90%;">
+                            <mat-select [(value)]="selectedFood">
+
+                                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <button mat-button class="button3">  <img src="/assets/images/add-icon.svg" alt="" style="margin-right: 5px;"> Add Language</button>
+
+
+            </mat-tab>
+
+            <mat-tab label="DATA SECURITY" fxLayout="row">
+               
+                <div fxLayout="column" fxFlex.gt-sm="20%">
+                    <p style="margin-top: 0; color: white; font-family: 'Montserrat', sans-serif;
+                    font-size: 12px;">Users</p>
+                    <mat-form-field class="arrowHide">
+                        <mat-select [(value)]="selectedFood">
+                            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+                <div fxLayout="column" fxFlex.gt-sm="20%">
+                    <p style="margin-top: 0; color: white; font-family: 'Montserrat', sans-serif;
+                    font-size: 12px;">Roles</p>
+                    <mat-form-field class="arrowHide">
+                        <mat-select [(value)]="selectedFood">
+                            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+         
+                <button mat-button class="button3">  <img src="/assets/images/add-icon.svg" alt="" style="margin-right: 5px;"> Create</button>
+                <button mat-button class="button3">  <img src="/assets/images/add-icon.svg" alt="" style="margin-right: 5px;"> Close</button>
+
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
