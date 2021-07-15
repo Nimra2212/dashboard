@@ -184,6 +184,13 @@ body {
         }
     }
 }
+    
+mat-raised-button:hover{
+background-color: transparent !important;
+}
+.mat-raised-button-focus-overlay {
+    background-color: transparent!important;
+}
 
 .dialogue {
     .divTop {

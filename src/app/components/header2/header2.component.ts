@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ServicesService } from '../services.service';
 
@@ -9,7 +9,11 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./header2.component.scss'],
 })
 export class Header2Component implements OnInit {
-  theme: Theme = 'dark-theme';
+  @HostListener('click', ['$event'])
+  public onClick(event: any): void {
+      event.stopPropagation();
+  }
+  theme: Theme = 'dark-theme';  
   image: string = '';
   constructor(
     public dialog: MatDialog,

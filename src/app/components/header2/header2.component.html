@@ -7,8 +7,8 @@
         <button class="dialogueButton" mat-button (click)="openDialog()"> <img src="/assets/images/add-icon.svg" alt="">  Create New Category</button>
         <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
             <button class="Modebutton" mat-button> <img src="/assets/images/left-align.svg" alt=""> Options <span class="material-icons">expand_more  </span></button>
-            <mat-menu #menu="matMenu">
-                <span style="padding: 30px;">Light Mode</span><mat-slide-toggle primary class="toggle" (click)="switchTheme()"> </mat-slide-toggle>
+            <mat-menu class="meenu" #menu="matMenu">
+              <button mat-raised-button  (click)="$event.stopPropagation()" disableRipple style="padding: 0px; margin-left: 20px; background-color: transparent; box-shadow: none; ">Light Mode<mat-slide-toggle primary class="toggle" (click)="switchTheme()" style="margin-left: 15px;"> </mat-slide-toggle></button>
             </mat-menu>
         </div>
     </div>
