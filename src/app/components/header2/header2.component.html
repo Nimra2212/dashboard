@@ -1,11 +1,17 @@
 <div class="header2" fxLayout.md="row" fxLayout.xs = "column" fxLayoutAlign="space-between">
     <div fxFlex.gt-sm="50%" class="headerInner" fxLayout="row">
-        <img src="/assets/images/category-icon.svg" alt="">
+        <img [src]="image" alt="">
         <p>Catogery</p>
     </div>
     <div fxFlex.gt-sm="50%" class="headerInnerright" fxLayout="row">
         <button class="button1" mat-button (click)="openDialog()"> <img src="/assets/images/add-icon.svg" alt="">  Create New Category</button>
-        <button class="button2" mat-button> <img src="/assets/images/left-align.svg" alt=""> Options <span class="material-icons">expand_more  </span></button>
+        <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
+            <button class="button2" mat-button> <img src="/assets/images/left-align.svg" alt=""> Options <span class="material-icons">expand_more  </span></button>
+            <mat-menu #menu="matMenu">
+                <span style="padding: 30px;">Dark Mode</span>     <mat-slide-toggle primary class="toggle" (click)="switchTheme()"> </mat-slide-toggle>
+            </mat-menu>
+        </div>
     </div>
 
 </div>
+

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-header2',
@@ -7,9 +9,17 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./header2.component.scss'],
 })
 export class Header2Component implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  theme: Theme = 'light-theme';
+ image = "";
+  constructor(public dialog: MatDialog,  @Inject(DOCUMENT) private document: Document,
+  private renderer: Renderer2, private service : ServicesService ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initializeTheme();
+    this.service.image.subscribe((image)=>{
+      this.image = image
+    })
+  }
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogueComponent, {
@@ -19,7 +29,31 @@ export class Header2Component implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  switchTheme() {
+    this.document.body.classList.replace(
+      this.theme,
+      this.theme === 'light-theme'
+        ? (this.theme = 'dark-theme')
+        : (this.theme = 'light-theme')
+    );
+    if( this.theme == 'dark-theme'){
+      this.service.subject.next('/assets/images/logo.svg')
+      this.service.image.next('/assets/images/category-icon.svg')
+      this.service.notifications.next('/assets/images/notifications-icon.svg')
+    }
+    else{
+      this.service.subject.next('/assets/images/logo-light.svg')
+      this.service.image.next('/assets/images/category-icon-light.svg')
+      this.service.notifications.next('/assets/images/notifications-icon -light.svg')
+    }
+  }
+
+  initializeTheme = (): void =>
+    this.renderer.addClass(this.document.body, this.theme);
 }
+
+
+export type Theme = 'light-theme' | 'dark-theme';
 
 @Component({
   selector: 'dialogue',
@@ -28,7 +62,7 @@ export class Header2Component implements OnInit {
 })
 export class DialogueComponent implements OnInit {
   selectedFood = 'English';
-  states: string[] = ['English', 'Arabic', 'French', 'name'];
+  states: string[] = ['English', 'Arabic', 'French'];
   ngOnInit() {}
   
 }

@@ -1,22 +1,22 @@
 <mat-toolbar class="mat-toolbar">
     <div class="toolbarInner" fxLayout.md="row" fxLayout.xs="column">
         <div class="logo" fxFlex.gt-sm="100%">
-            <img src="/assets/images/logo.svg" alt="">
+            <img [src]="logo" alt="">
         </div>
         <div class="headerdrop" fxFlex.gt-sm="100%" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
             fxLayoutAlign="flex-end">
             <div style="text-align: end; margin-top: 7px;">
-                <img src="/assets/images/notifications-icon.svg" alt="">
+                <img [src]="image" alt="">
             </div>
             <div style="align-items: flex-end;" class="headerRight" fxLayout.md="row" fxLayout.sm="column"
                 fxLayout.xs="column">
                 <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
-                    <button mat-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
+                    <button disableRipple mat-raised-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
                             class="material-icons">expand_more </span></button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>Profile</button>
-                        <button mat-menu-item>Setting</button>
-                        <button mat-menu-item>Logout</button>
+                        <button  mat-menu-item> <mat-icon> person </mat-icon> Profile</button>
+                        <button  mat-menu-item> <mat-icon> settings </mat-icon> Setting</button>
+                        <button  mat-menu-item style="color: red !important;"> <mat-icon style="color: red !important;"> logout </mat-icon> Logout</button>
                     </mat-menu>
                 </div>
             </div>

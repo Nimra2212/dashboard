@@ -1,44 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .mat-menu-panel {
     min-width: 212px !important;
     max-width: 380px !important;
 }
-.mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), 
+.mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
 .mat-tab-group.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
- .mat-tab-group.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-  .mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled), 
-  .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled), .mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-    background-color: rgba(209, 196, 233, 0); 
+.mat-tab-group.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+    background-color: rgba(209, 196, 233, 0);
 }
-.mat-tab-body{
+.mat-tab-body {
     margin-top: 20px !important;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-    height: 0px !important; 
+    height: 0px !important;
 }
 .mat-form-field-flex {
     border: 1px solid rgb(89, 89, 89);
     border-radius: 10px;
 }
-.mat-dialog-container{
-    background-color: #182445;
-  
+.mat-dialog-container {
+    background-color: var(--whole-tab);
 }
-.mat-tab-label-content{
-    color: white !important;
+.mat-tab-label-content {
     font-weight: bolder;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
 }
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: #ffffff;
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: var(--text-color);
 }
 .mat-form-field.mat-focused .mat-form-field-ripple {
     background-color: #683ab700;
@@ -48,7 +56,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding-left: 10px !important;
 }
 .mat-select-value {
-    color: white;
+    color: var(--text-color);
     font-weight: bolder;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -57,29 +65,464 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-select-arrow {
     color: white;
 }
-.mat-form-field-flex{
+.mat-form-field-flex {
     height: 40px !important;
 }
 .mat-form-field-appearance-legacy .mat-form-field-infix {
-  padding-top: 0 !important;
+    padding-top: 0 !important;
 }
+
+@mixin fonts {
+    font-weight: 800;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+.light-theme {
+    --background-color: #eaeff4;
+    --color: #6599ff;
+    --box-color: #fff;
+    --button-color: #fff;
+    --toolbar-color: #ffffff;
+    --text-color: black;
+    --tab-header: #f4f4f4;
+    --tab-body: white;
+    --whole-tab: rgb(198, 206, 221);
+    --card-border: rgb(198, 198, 198);
+    --hover-color: #d4e3f2;
+    --dot-color: black;
+    p {
+        --color: black;
+    }
+    .cardBottom {
+        --background-color: rgba(153, 170, 202, 0.36);
+    }
+
+    .header2 {
+        --header-color: #f4f4f4;
+    }
+    --box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+    --background-color: #021239;
+    --color: #f5f5f5;
+    --box-color: #2b2b2b;
+    --button-color: #1a1a1a;
+    --card-background: #071a48;
+    --toolbar-color: #021239;
+    --text-color: white;
+    --tab-header: #08173f;
+    --tab-body: #05153e;
+    --whole-tab: #182445;
+    --lite-color: #1d2b50;
+    --card-border: rgb(91, 91, 91);
+    --hover-color: #08173f;
+    --dot-color: white;
+    .header2 {
+        --header-color: #08173f;
+    }
+    .cardBottom {
+        --background-color: #253660;
+    }
+}
+
+.mainDiv {
+    min-height: 90vh;
+    max-height: auto;
+    background-color: var(--background-color);
+
+    .innerDiv {
+        margin: 0 10px 0 10px;
+    }
+    mat-card:hover {
+        background-color: var(--hover-color) !important;
+    }
+    mat-card {
+        padding: 0;
+        margin-top: 20px;
+        height: auto;
+        background-color: antiquewhite;
+        border-radius: 15px;
+        background-color: var(--background-color);
+        border: 1px solid var(--card-border);
+        cursor: pointer;
+
+        .cardDiv {
+            height: auto;
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            text-align: center;
+            position: relative;
+
+            .dropemenu {
+                visibility: hidden;
+                opacity: 1;
+                min-width: 25px !important;
+                position: absolute;
+                right: 0;
+                margin-right: -20px;
+                margin-top: -10px;
+                font-size: 15px;
+                .button2{
+                    box-shadow: none !important; 
+                    background-color: transparent;
+                    color: var(--dot-color);
+                }
+            }
+           
+            h6 {
+                margin: 25px 0 10px 0;
+                color: var(--color);
+                @include fonts;
+                position: relative;
+                font-size: 14px;
+            }
+
+            .cardTop {
+                height: fit-content;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding-bottom: 10px;
+                p {
+                    color: var(--color);
+                    font-weight: bolder;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 12px;
+                    margin-left: 10px;
+                }
+                img {
+                    height: 24px;
+                    border-radius: 100px;
+                    border: 1px solid var(--text-color);
+                }
+            }
+        }
+        .cardBottom {
+            height: auto;
+            width: 100%;
+            text-align: center;
+            background-color: var(--background-color);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            img {
+                background-size: cover;
+                background-position: top center;
+                background-repeat: no-repeat;
+                border-radius: 4px;
+                border: 1px solid #2e3d62;
+                margin: 10px 5px 5px 5px;
+
+                width: 42%;
+                position: relative;
+            }
+        }
+    }
+    mat-card:hover{
+        .dropemenu{
+        visibility: visible;
+        opacity: 1;
+        }
+    }
+}
+
+// header-scss
+
+.mat-toolbar {
+    height: auto;
+    width: 100%;
+    background-color: var(--toolbar-color) !important;
+    .toolbarInner {
+        width: 100%;
+        align-items: center !important;
+        .logo {
+            padding-top: 0.6rem;
+            img {
+                height: 46px;
+                margin: 8px 0px 8px 0px !important;
+            }
+        }
+        .headerdrop {
+            align-items: right !important;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px;
+            img {
+                height: 24px;
+                margin-right: 10px;
+            }
+            .headerRight {
+                img {
+                    height: 32px;
+                    width: 32px;
+                    border: 1px solid #e6eef5;
+                    border-radius: 100%;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .drope {
+                    width: 50%;
+                    justify-content: flex-end;
+                    padding: 0 !important;
+                    color: var(--text-color);
+                    font-size: 12px;
+                    font-weight: bold;
+                    font-family: "Montserrat", sans-serif;
+                    button {
+                        padding-left: 2px;
+                        padding-right: 8px;
+                        font-size: 13px;
+                        font-weight: bold;
+                        font-family: "Montserrat", sans-serif;
+                        color: var(--text-color);
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+.mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
+    color: var(--text-color);
+}
+// Header2
+
+.header2 {
+    height: auto;
+    width: 100%;
+    background-color: var(--header-color);
+    position: relative;
+    .headerInner {
+        padding: 5px 15px 5px 15px;
+        align-items: center;
+        img {
+            height: 18px;
+        }
+        p {
+            text-transform: uppercase;
+            padding-left: 10px;
+            color: var(--color);
+            font-size: 12px;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+    }
+    .headerInnerright {
+        margin-right: 20px;
+        align-items: center !important;
+        justify-content: flex-end;
+        button {
+            border-radius: 100px;
+            margin-left: 15px;
+            line-height: 30px;
+            text-transform: uppercase;
+            img {
+                margin-right: 5px;
+            }
+        }
+        .button1 {
+            background-color: #6599ff;
+            font-size: 12px;
+            width: 220px;
+            color: #e6eef5;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+        .button2 {
+            background-color: #6b30f4;
+            font-size: 12px;
+            width: 130px;
+            color: #e6eef5;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+        }
+    }
+}
+
 .mat-tab-body-content {
     height: auto !important;
     overflow: auto;
     margin-top: 0 !important;
-    
+
     padding: 0px 20px 20px 20px;
 }
-.cdk-overlay-pane {
-    width: 60%;
-}
+
 .mat-tab-body-wrapper {
-    background-color: #05153e;
+    background-color: var(--tab-body);
 }
 .mat-dialog-container {
     padding: 0 !important;
 }
 .mat-tab-header {
     padding: 0 20px 0 20px;
-    background-color: #08173f;
+    background-color: var(--tab-header);
+}
+
+.mainheaderDiv {
+    width: 600px;
+
+    .divTop {
+        padding: 10px;
+        p {
+            font-size: 14px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            img {
+                height: 18px;
+                padding: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.button4 {
+    background-color: #6b30f4;
+    font-size: 12px;
+    width: 180px;
+    line-height: 30px;
+    color: #e6eef5;
+    font-weight: bold;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+.newbtn {
+    color: white;
+    .cdk-overlay-pane.my-dialog {
+        position: relative !important;
+    }
+    .close.mat-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        line-height: 14px;
+        min-width: auto;
+    }
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.mat-select-panel {
+    min-width: 232px !important;
+    max-width: 232px !important;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 356px !important;
+    min-width: 232px !important;
+    border-radius: 4px;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    opacity: 1;
+}
+.mat-form-field-wrapper {
+    padding: 0;
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 0.5em 0;
+}
+mat-form-field {
+    border-radius: 5px;
+}
+
+.mat-input-element {
+    padding-left: 10px !important;
+    margin-top: -15px !important;
+}
+mat-form-field {
+    width: 100%;
+    font-family: "Mukta Malar", sans-serif;
+    letter-spacing: 1px;
+}
+
+.btn3 {
+    .button3 {
+        background-color: #6599ff;
+        font-size: 12px;
+        width: 120px;
+        line-height: 30px;
+        color: var(--text-color);
+        font-weight: bold;
+        border-radius: 50px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        margin-right: 20px !important;
+        img {
+            margin-right: 10px;
+        }
+    }
+    .button31 {
+        background-color: #6598ff00;
+        font-size: 12px;
+        width: 120px;
+        line-height: 30px;
+        color: var(--text-color);
+        font-weight: bold;
+        border-radius: 50px;
+        border: 1px solid var(--text-color);
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        margin-right: 20px !important;
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+.mat-menu-content:not(:empty) {
+    padding-top: 17px !important;
+    padding-bottom: 8px !important;
+}
+
+.mat-menu-panel {
+    background-color: var(--background-color);
+    border: 1px solid var(--lite-color) !important ;
+    width: 200px !important;
+    button {
+        color: var(--text-color) !important;
+    }
+    span {
+        color: var(--text-color);
+        font-weight: bolder;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+    }
+}
+.mat-slide-toggle-thumb {
+    background-color: var(--text-color);
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: var(--text-color);
+}
+.mat-tab-label-content {
+    color: var(--text-color) !important;
+}
+p {
+    color: var(--text-color) !important;
+}
+.mainDiv mat-card .cardDiv .dropemenu .button2 {
+    font-size: 20px !important;
 }

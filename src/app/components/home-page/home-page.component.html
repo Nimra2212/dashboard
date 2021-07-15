@@ -1,12 +1,20 @@
 <div class="mainDiv">
+   
     <div class="innerDiv" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px">
         <mat-card fxFlex.gt-sm="18.4%" fxFlex.md="22.7%" fxFlex.sm="46.5%" fxFlex.gt-xs="29%" fxFlex.xs="29%"
             *ngFor="let card of cards">
             <div class="cardDiv" fxLayout="column">
+                <div class="dropemenu" [matMenuTriggerFor]="menu" fxLayout="row">
+                    <button class="button2" disableRipple mat-raised-button > ...</button>
+                    <mat-menu #menu="matMenu">
+                        <button  mat-menu-item> <mat-icon>edit</mat-icon> Edit</button>
+                        <button  mat-menu-item style="color: red !important;"> <mat-icon style="color: red !important;">delete</mat-icon>  Delete</button>
+                    </mat-menu>
+                </div>
                 <h6>strategy management dashboards</h6>
                 <div class="cardTop" fxLayout="row">
                     <img src="/assets/images/user.png" alt="">
-                    <p>MOHAMMAD ABDULLAH</p>
+                    <p>Mohammad Abdullah</p>
                 </div>
             </div>
             <div class="cardBottom">
