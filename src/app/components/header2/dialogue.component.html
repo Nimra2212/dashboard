@@ -1,62 +1,51 @@
-<div class="mainheaderDiv">
-   
+<div class="dialogue">
     <div class="divTop" fxLayout="row" fxLayoutAlign="space-between">
-        
-        <p fxLayoutAlign="center center">  <img src="/assets/images/add-icon.svg" alt=""> Create New Catogery</p>
+        <p fxLayoutAlign="center center"> <img src="/assets/images/add-icon.svg" alt=""> Create New Catogery</p>
         <button class="close" class="newbtn" mat-button mat-dialog-close>X</button>
     </div>
-    <div>
+    <div class="dialogueTabs">
         <mat-tab-group [disableRipple]="true" animationDuration="0ms">
-            <mat-tab fxLayoutGap="20px" label="GENERAL INFO"
-                fxLayout="column">
-                <div style="position: relative;" fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px" 
-                fxLayout="row">
-                    <div fxLayout="column" >
-                        <p style="margin-top: 0; font-family: 'Montserrat', sans-serif;
-                        font-size: 12px;">Language</p>
+            <mat-tab fxLayoutGap="20px" label="GENERAL INFO" fxLayout="column">
+                <div fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px" fxLayout="row"
+                    class="formTitle">
+                    <div fxLayout="column">
+                        <p>Language</p>
                         <mat-form-field>
-                            <mat-select [(value)]="selectedFood">
+                            <mat-select [(value)]="selectedLanguage">
                                 <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
                             </mat-select>
                         </mat-form-field>
-
                     </div>
                     <div fxLayout="column" style="width: 100%;">
-                        <p style="margin-top: 0; font-family: 'Montserrat', sans-serif;
-                        font-size: 12px;">Category name</p>
-                        <mat-form-field >
-                           <input type="text" matInput>
+                        <p>Category name</p>
+                        <mat-form-field>
+                            <input type="text" matInput>
                         </mat-form-field>
-
                     </div>
                 </div>
-                <button mat-button class="button4">  <img src="/assets/images/add-icon.svg" alt="" style="margin-right: 5px;"> Add Language</button>
-
-
+                <button mat-button class="tabButton"> <img src="/assets/images/add-icon.svg" alt=""> Add
+                    Language</button>
             </mat-tab>
-
             <mat-tab label="DATA SECURITY" fxLayout="column">
-                <div fxLayout="column" >
-                    <p style="margin-top: 0;  font-family: 'Montserrat', sans-serif;
-                    font-size: 12px;">Users</p>
-                    <mat-form-field >
-                       <input type="text" matInput>
+                <div class="formTitle" fxLayout="column">
+                    <p>Users</p>
+                    <mat-form-field>
+                        <input type="text" matInput>
                     </mat-form-field>
-
                 </div>
-                <div fxLayout="column" >
-                    <p style="margin-top: 0;  font-family: 'Montserrat', sans-serif;
-                    font-size: 12px;">Roles</p>
-                    <mat-form-field >
-                       <input type="text" matInput>
+                <div class="formTitle" fxLayout="column">
+                    <p>Roles</p>
+                    <mat-form-field>
+                        <input type="text" matInput>
                     </mat-form-field>
-
                 </div>
             </mat-tab>
         </mat-tab-group>
-        <div class="btn3" style="margin-top:20px; margin-left:20px; margin-bottom:20px; text-align: end; ">
-            <button mat-button mat-dialog-close class="button3">  <img src="/assets/images/add-icon.svg" alt="" > Create</button>
-            <button mat-button mat-dialog-close class="button31">  <img src="/assets/images/add-icon.svg" alt="" > Cancel</button>
+        <div class="bottomButtonDiv" style="margin-top:20px; margin-left:20px; margin-bottom:20px; text-align: end; ">
+            <button mat-button mat-dialog-close class="buttonCreate"> <img src="/assets/images/add-icon.svg" alt="">
+                Create</button>
+            <button mat-button mat-dialog-close class="buttonCancel"> <img src="/assets/images/add-icon.svg" alt="">
+                Cancel</button>
         </div>
     </div>
 </div>

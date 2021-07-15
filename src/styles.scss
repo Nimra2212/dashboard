@@ -11,6 +11,371 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+// dark and light mode SCSS
+
+.light-theme {
+    --background-color: #eaeff4;
+    --color: #6599ff;
+    --box-color: #fff;
+    --button-color: #fff;
+    --toolbar-color: #ffffff;
+    --text-color: black;
+    --tab-header: #f4f4f4;
+    --tab-body: white;
+    --whole-tab: rgb(198, 206, 221);
+    --card-border: rgb(198, 198, 198);
+    --hover-color: #d4e3f2;
+    --dot-color: black;
+    .cardBottom {
+        --background-color: rgba(153, 170, 202, 0.36);
+    }
+    .header2 {
+        --header-color: #f4f4f4;
+    }
+}
+
+.dark-theme {
+    --background-color: #021239;
+    --color: #f5f5f5;
+    --box-color: #2b2b2b;
+    --button-color: #1a1a1a;
+    --card-background: #071a48;
+    --toolbar-color: #021239;
+    --text-color: white;
+    --tab-header: #08173f;
+    --tab-body: #05153e;
+    --whole-tab: #182445;
+    --lite-color: #1d2b50;
+    --card-border: rgb(91, 91, 91);
+    --hover-color: #08173f;
+    --dot-color: white;
+    .header2 {
+        --header-color: #08173f;
+    }
+    .cardBottom {
+        --background-color: #253660;
+    }
+}
+
+// all scss mixins
+
+@mixin fonts {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+}
+@mixin buttons {
+    font-size: 12px;
+    width: 120px;
+    line-height: 30px;
+    color: var(--text-color);
+    border-radius: 50px;
+    @include fonts;
+    text-transform: uppercase;
+    margin-right: 20px !important;
+    border: 1px solid var(--text-color);
+    img {
+        margin-right: 10px;
+    }
+}
+
+// header scss
+
+.mat-toolbar {
+    height: auto;
+    width: 100%;
+    background-color: var(--toolbar-color) !important;
+    .toolbarInner {
+        width: 100%;
+        align-items: center !important;
+        .logo {
+            padding-top: 0.6rem;
+            img {
+                height: 46px;
+                margin: 8px 0px 8px 0px !important;
+            }
+        }
+        .headerdrop {
+            align-items: right !important;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px;
+            .headerdropProfile {
+                text-align: end;
+                margin-top: 7px;
+                img {
+                    height: 24px;
+                    margin-right: 10px;
+                }
+            }
+            .headerRight {
+                align-items: flex-end;
+                img {
+                    height: 32px;
+                    width: 32px;
+                    border: 1px solid #e6eef5;
+                    border-radius: 100%;
+                    margin: 0px 10px 0px 10px;
+                }
+                .drope {
+                    width: 50%;
+                    justify-content: flex-end;
+                    padding: 0 !important;
+                    color: var(--text-color);
+                    font-size: 12px;
+                    @include fonts;
+                    button {
+                        padding: 0px 8px 0px 2px;
+                        font-size: 13px;
+                        @include fonts;
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Header2 scss
+
+.header2 {
+    height: auto;
+    width: 100%;
+    background-color: var(--header-color);
+    position: relative;
+    .headerInner {
+        padding: 5px 15px 5px 15px;
+        align-items: center;
+        img {
+            height: 18px;
+        }
+        p {
+            text-transform: uppercase;
+            padding-left: 10px;
+            color: var(--color);
+            font-size: 12px;
+            @include fonts;
+        }
+    }
+    .headerInnerright {
+        margin-right: 20px;
+        align-items: center !important;
+        justify-content: flex-end;
+        button {
+            border-radius: 100px;
+            margin-left: 15px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #e6eef5;
+            text-transform: uppercase;
+            img {
+                margin-right: 5px;
+            }
+        }
+        .dialogueButton {
+            background-color: #6599ff;
+            width: 220px;
+            color: #e6eef5;
+            @include fonts;
+        }
+        .Modebutton {
+            background-color: #6b30f4;
+            width: 130px;
+            @include fonts;
+        }
+    }
+}
+
+.dialogue {
+    .divTop {
+        padding: 10px;
+        p {
+            font-size: 14px;
+            color: white;
+            text-transform: uppercase;
+            @include fonts;
+            margin: 0;
+            img {
+                height: 18px;
+                padding: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .dialogueTabs {
+        .formTitle {
+            position: relative;
+            p {
+                margin-top: 0;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                color: var(--text-color) !important;
+            }
+        }
+    }
+}
+
+.mat-tab-body-content {
+    height: auto !important;
+    overflow: auto;
+    margin-top: 0 !important;
+
+    padding: 0px 20px 20px 20px;
+}
+
+.mat-tab-body-wrapper {
+    background-color: var(--tab-body);
+}
+.mat-dialog-container {
+    padding: 0 !important;
+}
+
+.mat-tab-header {
+    padding: 0 20px 0 20px;
+    background-color: var(--tab-header);
+}
+
+.tabButton {
+    background-color: #6b30f4;
+    font-size: 12px;
+    width: 180px;
+    line-height: 30px;
+    color: #e6eef5;
+    border-radius: 50px;
+    @include fonts;
+    text-transform: uppercase;
+    img {
+        margin-right: 5px;
+    }
+}
+.bottomButtonDiv {
+    .buttonCreate {
+        background-color: #6599ff;
+        @include buttons;
+    }
+    .buttonCancel {
+        background-color: #6598ff00;
+        @include buttons;
+    }
+}
+.newbtn {
+    color: white;
+    .cdk-overlay-pane.my-dialog {
+        position: relative !important;
+    }
+    .close.mat-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        line-height: 14px;
+        min-width: auto;
+    }
+}
+
+//  home page scss
+
+.HomeDiv {
+    min-height: 90vh;
+    max-height: auto;
+    background-color: var(--background-color);
+
+    .innerDiv {
+        margin: 0 10px 0 10px;
+    }
+    mat-card:hover {
+        background-color: var(--hover-color) !important;
+    }
+    mat-card {
+        padding: 0;
+        margin-top: 20px;
+        height: auto;
+        background-color: antiquewhite;
+        border-radius: 15px;
+        background-color: var(--background-color);
+        border: 1px solid var(--card-border);
+        cursor: pointer;
+        .cardDiv {
+            height: auto;
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            text-align: center;
+            position: relative;
+            .dropemenu {
+                visibility: hidden;
+                opacity: 1;
+                min-width: 25px !important;
+                position: absolute;
+                right: 0;
+                margin-right: -20px;
+                margin-top: -10px;
+                font-size: 15px;
+                .button2 {
+                    box-shadow: none !important;
+                    background-color: transparent;
+                    color: var(--dot-color);
+                }
+            }
+            h6 {
+                margin: 25px 0 10px 0;
+                color: var(--color);
+                @include fonts;
+                position: relative;
+                font-size: 14px;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+            .cardTop {
+                height: fit-content;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding-bottom: 10px;
+                p {
+                    color: var(--color);
+                    @include fonts;
+                    font-size: 12px;
+                    margin-left: 10px;
+                }
+                img {
+                    height: 24px;
+                    border-radius: 100px;
+                    border: 1px solid var(--text-color);
+                }
+            }
+        }
+        .cardBottom {
+            height: auto;
+            width: 100%;
+            text-align: center;
+            background-color: var(--background-color);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            img {
+                background-size: cover;
+                background-position: top center;
+                background-repeat: no-repeat;
+                border-radius: 4px;
+                border: 1px solid #2e3d62;
+                margin: 10px 5px 5px 5px;
+                width: 42%;
+                position: relative;
+            }
+        }
+    }
+    mat-card:hover {
+        .dropemenu {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+// other override custom material scss
+
 .mat-menu-panel {
     min-width: 212px !important;
     max-width: 380px !important;
@@ -40,8 +405,7 @@ body {
     background-color: var(--whole-tab);
 }
 .mat-tab-label-content {
-    font-weight: bolder;
-    font-family: "Montserrat", sans-serif;
+    @include fonts;
     text-transform: uppercase;
 }
 .mat-tab-group.mat-primary .mat-ink-bar,
@@ -58,9 +422,9 @@ body {
 .mat-select-value {
     color: var(--text-color);
     font-weight: bolder;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
+    @include fonts;
     font-size: 12px;
+    text-transform: uppercase;
 }
 .mat-select-arrow {
     color: white;
@@ -72,343 +436,11 @@ body {
     padding-top: 0 !important;
 }
 
-@mixin fonts {
-    font-weight: 800;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-}
-
-.light-theme {
-    --background-color: #eaeff4;
-    --color: #6599ff;
-    --box-color: #fff;
-    --button-color: #fff;
-    --toolbar-color: #ffffff;
-    --text-color: black;
-    --tab-header: #f4f4f4;
-    --tab-body: white;
-    --whole-tab: rgb(198, 206, 221);
-    --card-border: rgb(198, 198, 198);
-    --hover-color: #d4e3f2;
-    --dot-color: black;
-    p {
-        --color: black;
-    }
-    .cardBottom {
-        --background-color: rgba(153, 170, 202, 0.36);
-    }
-
-    .header2 {
-        --header-color: #f4f4f4;
-    }
-    --box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-}
-
-.dark-theme {
-    --background-color: #021239;
-    --color: #f5f5f5;
-    --box-color: #2b2b2b;
-    --button-color: #1a1a1a;
-    --card-background: #071a48;
-    --toolbar-color: #021239;
-    --text-color: white;
-    --tab-header: #08173f;
-    --tab-body: #05153e;
-    --whole-tab: #182445;
-    --lite-color: #1d2b50;
-    --card-border: rgb(91, 91, 91);
-    --hover-color: #08173f;
-    --dot-color: white;
-    .header2 {
-        --header-color: #08173f;
-    }
-    .cardBottom {
-        --background-color: #253660;
-    }
-}
-
-.mainDiv {
-    min-height: 90vh;
-    max-height: auto;
-    background-color: var(--background-color);
-
-    .innerDiv {
-        margin: 0 10px 0 10px;
-    }
-    mat-card:hover {
-        background-color: var(--hover-color) !important;
-    }
-    mat-card {
-        padding: 0;
-        margin-top: 20px;
-        height: auto;
-        background-color: antiquewhite;
-        border-radius: 15px;
-        background-color: var(--background-color);
-        border: 1px solid var(--card-border);
-        cursor: pointer;
-
-        .cardDiv {
-            height: auto;
-            width: 100%;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            text-align: center;
-            position: relative;
-
-            .dropemenu {
-                visibility: hidden;
-                opacity: 1;
-                min-width: 25px !important;
-                position: absolute;
-                right: 0;
-                margin-right: -20px;
-                margin-top: -10px;
-                font-size: 15px;
-                .button2{
-                    box-shadow: none !important; 
-                    background-color: transparent;
-                    color: var(--dot-color);
-                }
-            }
-           
-            h6 {
-                margin: 25px 0 10px 0;
-                color: var(--color);
-                @include fonts;
-                position: relative;
-                font-size: 14px;
-            }
-
-            .cardTop {
-                height: fit-content;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                padding-bottom: 10px;
-                p {
-                    color: var(--color);
-                    font-weight: bolder;
-                    font-family: "Montserrat", sans-serif;
-                    font-size: 12px;
-                    margin-left: 10px;
-                }
-                img {
-                    height: 24px;
-                    border-radius: 100px;
-                    border: 1px solid var(--text-color);
-                }
-            }
-        }
-        .cardBottom {
-            height: auto;
-            width: 100%;
-            text-align: center;
-            background-color: var(--background-color);
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            img {
-                background-size: cover;
-                background-position: top center;
-                background-repeat: no-repeat;
-                border-radius: 4px;
-                border: 1px solid #2e3d62;
-                margin: 10px 5px 5px 5px;
-
-                width: 42%;
-                position: relative;
-            }
-        }
-    }
-    mat-card:hover{
-        .dropemenu{
-        visibility: visible;
-        opacity: 1;
-        }
-    }
-}
-
-// header-scss
-
-.mat-toolbar {
-    height: auto;
-    width: 100%;
-    background-color: var(--toolbar-color) !important;
-    .toolbarInner {
-        width: 100%;
-        align-items: center !important;
-        .logo {
-            padding-top: 0.6rem;
-            img {
-                height: 46px;
-                margin: 8px 0px 8px 0px !important;
-            }
-        }
-        .headerdrop {
-            align-items: right !important;
-            justify-content: flex-end;
-            width: 100%;
-            padding: 10px;
-            img {
-                height: 24px;
-                margin-right: 10px;
-            }
-            .headerRight {
-                img {
-                    height: 32px;
-                    width: 32px;
-                    border: 1px solid #e6eef5;
-                    border-radius: 100%;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                }
-                .drope {
-                    width: 50%;
-                    justify-content: flex-end;
-                    padding: 0 !important;
-                    color: var(--text-color);
-                    font-size: 12px;
-                    font-weight: bold;
-                    font-family: "Montserrat", sans-serif;
-                    button {
-                        padding-left: 2px;
-                        padding-right: 8px;
-                        font-size: 13px;
-                        font-weight: bold;
-                        font-family: "Montserrat", sans-serif;
-                        color: var(--text-color);
-                        
-                    }
-                }
-            }
-        }
-    }
-}
-.mat-menu-item .mat-icon-no-color, .mat-menu-item-submenu-trigger::after {
+.mat-menu-item .mat-icon-no-color,
+.mat-menu-item-submenu-trigger::after {
     color: var(--text-color);
 }
-// Header2
 
-.header2 {
-    height: auto;
-    width: 100%;
-    background-color: var(--header-color);
-    position: relative;
-    .headerInner {
-        padding: 5px 15px 5px 15px;
-        align-items: center;
-        img {
-            height: 18px;
-        }
-        p {
-            text-transform: uppercase;
-            padding-left: 10px;
-            color: var(--color);
-            font-size: 12px;
-            font-weight: bold;
-            font-family: "Montserrat", sans-serif;
-        }
-    }
-    .headerInnerright {
-        margin-right: 20px;
-        align-items: center !important;
-        justify-content: flex-end;
-        button {
-            border-radius: 100px;
-            margin-left: 15px;
-            line-height: 30px;
-            text-transform: uppercase;
-            img {
-                margin-right: 5px;
-            }
-        }
-        .button1 {
-            background-color: #6599ff;
-            font-size: 12px;
-            width: 220px;
-            color: #e6eef5;
-            font-weight: bold;
-            font-family: "Montserrat", sans-serif;
-        }
-        .button2 {
-            background-color: #6b30f4;
-            font-size: 12px;
-            width: 130px;
-            color: #e6eef5;
-            font-weight: bold;
-            font-family: "Montserrat", sans-serif;
-        }
-    }
-}
-
-.mat-tab-body-content {
-    height: auto !important;
-    overflow: auto;
-    margin-top: 0 !important;
-
-    padding: 0px 20px 20px 20px;
-}
-
-.mat-tab-body-wrapper {
-    background-color: var(--tab-body);
-}
-.mat-dialog-container {
-    padding: 0 !important;
-}
-.mat-tab-header {
-    padding: 0 20px 0 20px;
-    background-color: var(--tab-header);
-}
-
-.mainheaderDiv {
-    width: 600px;
-
-    .divTop {
-        padding: 10px;
-        p {
-            font-size: 14px;
-            color: white;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-family: "Montserrat", sans-serif;
-            margin: 0;
-            img {
-                height: 18px;
-                padding: 5px;
-                margin-right: 5px;
-            }
-        }
-    }
-}
-
-.button4 {
-    background-color: #6b30f4;
-    font-size: 12px;
-    width: 180px;
-    line-height: 30px;
-    color: #e6eef5;
-    font-weight: bold;
-    border-radius: 50px;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-}
-.newbtn {
-    color: white;
-    .cdk-overlay-pane.my-dialog {
-        position: relative !important;
-    }
-    .close.mat-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 5px;
-        line-height: 14px;
-        min-width: auto;
-    }
-}
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -459,39 +491,6 @@ mat-form-field {
     letter-spacing: 1px;
 }
 
-.btn3 {
-    .button3 {
-        background-color: #6599ff;
-        font-size: 12px;
-        width: 120px;
-        line-height: 30px;
-        color: var(--text-color);
-        font-weight: bold;
-        border-radius: 50px;
-        font-family: "Montserrat", sans-serif;
-        text-transform: uppercase;
-        margin-right: 20px !important;
-        img {
-            margin-right: 10px;
-        }
-    }
-    .button31 {
-        background-color: #6598ff00;
-        font-size: 12px;
-        width: 120px;
-        line-height: 30px;
-        color: var(--text-color);
-        font-weight: bold;
-        border-radius: 50px;
-        border: 1px solid var(--text-color);
-        font-family: "Montserrat", sans-serif;
-        text-transform: uppercase;
-        margin-right: 20px !important;
-        img {
-            margin-right: 10px;
-        }
-    }
-}
 .mat-menu-content:not(:empty) {
     padding-top: 17px !important;
     padding-bottom: 8px !important;
@@ -506,8 +505,7 @@ mat-form-field {
     }
     span {
         color: var(--text-color);
-        font-weight: bolder;
-        font-family: "Montserrat", sans-serif;
+        @include fonts;
         font-size: 12px;
     }
 }
@@ -523,6 +521,6 @@ mat-form-field {
 p {
     color: var(--text-color) !important;
 }
-.mainDiv mat-card .cardDiv .dropemenu .button2 {
+.HomeDiv mat-card .cardDiv .dropemenu .button2 {
     font-size: 20px !important;
 }

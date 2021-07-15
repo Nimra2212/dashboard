@@ -5,10 +5,10 @@
         </div>
         <div class="headerdrop" fxFlex.gt-sm="100%" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
             fxLayoutAlign="flex-end">
-            <div style="text-align: end; margin-top: 7px;">
+            <div class="headerdropProfile">
                 <img [src]="image" alt="">
             </div>
-            <div style="align-items: flex-end;" class="headerRight" fxLayout.md="row" fxLayout.sm="column"
+            <div class="headerRight" fxLayout.md="row" fxLayout.sm="column"
                 fxLayout.xs="column">
                 <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
                     <button disableRipple mat-raised-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
@@ -26,7 +26,6 @@
 <mat-sidenav-container>
     <mat-sidenav> </mat-sidenav>
     <mat-sidenav-content>
-        <app-header2></app-header2>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

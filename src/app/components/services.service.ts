@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ServicesService {
 
-subject = new BehaviorSubject('/assets/images/logo-light.svg');
-image = new BehaviorSubject('/assets/images/category-icon-light.svg')
-notifications = new BehaviorSubject('/assets/images/notifications-icon -light.svg')
+subject = new BehaviorSubject('/assets/images/logo.svg');
+image = new BehaviorSubject('/assets/images/category-icon.svg')
+notifications = new BehaviorSubject('/assets/images/notifications-icon.svg')
   constructor() { }
 }
