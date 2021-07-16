@@ -9,15 +9,19 @@ import { ServicesService } from '../services.service';
 })
 export class HomePageComponent implements OnInit {
   cards = [];
-  constructor( private router: Router, private service: ServicesService) {}
+  constructor(private router: Router, private service: ServicesService) {}
   ngOnInit(): void {
     for (let i = 0; i < 8; i++) {
       this.cards.push(i);
     }
   }
-  dashboardlist(){
-this.router.navigateByUrl('dashboard-list')
-this.service.categoryName.next('Strategy Management Dashboards')
+  dashboardlist() {
+    this.router.navigateByUrl('dashboard-list');
+    this.service.categoryName.next('Strategy Management Dashboards');
+    this.service.title.next('Dashboard')
   }
+  openDialog() {
+    this.service.openDialog();
+   }
 }
 // dashboard-list

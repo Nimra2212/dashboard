@@ -13,6 +13,7 @@ export class Header2Component implements OnInit {
   public onClick(event: any): void {
       event.stopPropagation();
   }
+  title:string = "";
   categoryName :string = "";
   theme: Theme = 'dark-theme';  
   image: string = '';
@@ -30,14 +31,12 @@ export class Header2Component implements OnInit {
     this.service.categoryName.subscribe((name)=>{
       this.categoryName= name;
     })
+    this.service.title.subscribe((title)=>{
+      this.title = title;
+    })
   }
   openDialog() {
-    const dialogRef = this.dialog.open(DialogueComponent, {
-      position: { top: '30px' },
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+   this.service.openDialog();
   }
   switchTheme() {
     this.document.body.classList.replace(
@@ -70,12 +69,14 @@ export type Theme =  'dark-theme' | 'light-theme' ;
   styleUrls: ['./header2.component.scss'],
 })
 export class DialogueComponent implements OnInit {
-
+  title:string = "";
   selectedLanguage:string = 'English';
   states: string[] = ['English', 'Arabic', 'French'];
-  constructor(){}
+  constructor(private service : ServicesService){}
 
   ngOnInit() {
-
+    this.service.title.subscribe((title)=>{
+      this.title = title;
+    })
   }
 }

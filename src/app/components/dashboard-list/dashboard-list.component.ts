@@ -7,13 +7,16 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./dashboard-list.component.scss']
 })
 export class DashboardListComponent implements OnInit {
- 
+  
   cards = [];
   constructor( private service: ServicesService) {}
   ngOnInit(): void {
     for (let i = 0; i < 4; i++) {
       this.cards.push(i);
     }
+  }
+  openDialog(){
+    this.service.openDialog();
   }
 
 }
