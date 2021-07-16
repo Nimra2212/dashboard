@@ -4,48 +4,75 @@
         <button class="close" class="newbtn" mat-button mat-dialog-close>X</button>
     </div>
     <div class="dialogueTabs">
+        <form [formGroup]="form">
         <mat-tab-group [disableRipple]="true" animationDuration="0ms">
-            <mat-tab fxLayoutGap="20px" label="GENERAL INFO" fxLayout="column">
-                <div fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px" fxLayout="row"
-                    class="formTitle">
+           
+                <mat-tab fxLayoutGap="20px" label="GENERAL INFO" fxLayout="column">
                     <div fxLayout="column">
-                        <p>Language</p>
-                        <mat-form-field>
-                            <mat-select [(value)]="selectedLanguage">
-                                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                            </mat-select>
+                        <div *ngIf="dialoguefield!==true" class="formTitle check" fxLayout="column">
+                            <p>Grid Size</p>
+                            <mat-form-field appearance="outline">
+                                <input name="gridSize" type="text" matInput required>
+                            </mat-form-field>
+                        </div>
+                        <div *ngFor="let language of languages">
+                            <div fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px"
+                                fxLayout="row" class="formTitle">
+                                <div fxLayout="column" class="check">
+                                    <p>Language</p>
+                                    <mat-form-field appearance="outline">
+                                        <mat-select >
+                                            <mat-option value = "English" >English
+                                            </mat-option>
+                                            <mat-option value = "Arabic" >Arabic
+                                            </mat-option>
+                                            <mat-option value = "French" >French
+                                            </mat-option>
+                                            <mat-option value = "Chinese" >Chinese
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayout="column" class="check" style="width: 100%;">
+                                    <p>Category name</p>
+                                    <mat-form-field appearance="outline">
+                                        <input autocomplete="off" name="name" type="text" matInput
+                                            formControlName="name" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button mat-button class="tabButton" (click)="addLanguages();">
+                        <img src="/assets/images/add-icon.svg" alt=""> Add Language
+                    </button>
+                </mat-tab>
+                <mat-tab label="DATA SECURITY" fxLayout="column">
+
+                    <div class="formTitle check" fxLayout="column">
+                        <p>Users</p>
+                        <mat-form-field appearance="outline">
+                            <input type="text" matInput formControlName="user" required>
                         </mat-form-field>
                     </div>
-                    <div fxLayout="column" style="width: 100%;">
-                        <p>Category name</p>
-                        <mat-form-field>
-                            <input autocomplete="off" type="text" matInput>
+                    <div class="formTitle check" fxLayout="column">
+                        <p>Roles</p>
+                        <mat-form-field appearance="outline">
+                            <input type="text" matInput formControlName="roles" required>
                         </mat-form-field>
                     </div>
-                </div>
-                <button mat-button class="tabButton"> <img src="/assets/images/add-icon.svg" alt=""> Add
-                    Language</button>
-            </mat-tab>
-            <mat-tab label="DATA SECURITY" fxLayout="column">
-                <div class="formTitle" fxLayout="column">
-                    <p>Users</p>
-                    <mat-form-field>
-                        <input type="text" matInput>
-                    </mat-form-field>
-                </div>
-                <div class="formTitle" fxLayout="column">
-                    <p>Roles</p>
-                    <mat-form-field>
-                        <input type="text" matInput>
-                    </mat-form-field>
-                </div>
-            </mat-tab>
+
+                </mat-tab>
+           
         </mat-tab-group>
-        <div class="bottomButtonDiv" >
-            <button mat-button mat-dialog-close class="buttonCreate"> <img src="/assets/images/add-icon.svg" alt="">
+        <div class="bottomButtonDiv">
+            <button mat-button mat-dialog-close (click)="create()" class="buttonCreate" [disabled]="!form.valid"> <img
+                    src="/assets/images/add-icon.svg" alt="">
                 Create</button>
             <button mat-button mat-dialog-close class="buttonCancel"> <img src="/assets/images/add-icon.svg" alt="">
                 Cancel</button>
         </div>
+    </form>
     </div>
 </div>

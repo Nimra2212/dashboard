@@ -25,6 +25,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DialogueFieldComponent } from './components/dialogue-field/dialogue-field.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     HeaderComponent,
     Header2Component,
     DialogueComponent,
+    DialogueFieldComponent,
   ],
   entryComponents: [DialogueComponent],
   imports: [

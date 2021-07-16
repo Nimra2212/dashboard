@@ -1,6 +1,14 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -11,11 +19,11 @@ import { ServicesService } from '../services.service';
 export class Header2Component implements OnInit {
   @HostListener('click', ['$event'])
   public onClick(event: any): void {
-      event.stopPropagation();
+    event.stopPropagation();
   }
-  title:string = "";
-  categoryName :string = "";
-  theme: Theme = 'dark-theme';  
+  title: string = '';
+  categoryName: string = '';
+  theme: Theme = 'dark-theme';
   image: string = '';
   constructor(
     public dialog: MatDialog,
@@ -28,15 +36,15 @@ export class Header2Component implements OnInit {
     this.service.image.subscribe((image) => {
       this.image = image;
     });
-    this.service.categoryName.subscribe((name)=>{
-      this.categoryName= name;
-    })
-    this.service.title.subscribe((title)=>{
+    this.service.categoryName.subscribe((name) => {
+      this.categoryName = name;
+    });
+    this.service.title.subscribe((title) => {
       this.title = title;
-    })
+    });
   }
   openDialog() {
-   this.service.openDialog();
+    this.service.openDialog();
   }
   switchTheme() {
     this.document.body.classList.replace(
@@ -61,7 +69,7 @@ export class Header2Component implements OnInit {
     this.renderer.addClass(this.document.body, this.theme);
 }
 
-export type Theme =  'dark-theme' | 'light-theme' ;
+export type Theme = 'dark-theme' | 'light-theme';
 
 @Component({
   selector: 'dialogue',
@@ -69,14 +77,41 @@ export type Theme =  'dark-theme' | 'light-theme' ;
   styleUrls: ['./header2.component.scss'],
 })
 export class DialogueComponent implements OnInit {
-  title:string = "";
-  selectedLanguage:string = 'English';
-  states: string[] = ['English', 'Arabic', 'French'];
-  constructor(private service : ServicesService){}
+  form: FormGroup;
+  dialoguefield = false;
+  languages = [1];
+  title: string = '';
+  selectedLanguage: string = 'English';
+  states = ['English', 'Arabic', 'French', 'Chinese'];
+  constructor(private service: ServicesService, private router: Router,private formBuilder: FormBuilder,) {}
 
   ngOnInit() {
-    this.service.title.subscribe((title)=>{
+    this.setupValidations();
+    this.service.title.subscribe((title) => {
       this.title = title;
+    });
+    this.service.dialogueField.subscribe((field)=>{
+      this.dialoguefield = field
     })
+  }
+  addLanguages() {
+    for (let i = 1; i < 2; i++) {
+      this.languages.push(i);
+      ++i;
+    }
+  }
+  create(){
+    this.router.navigateByUrl('dashboard-list');
+    this.service.dialogueField.next(false)
+    this.service.categoryName.next('Strategy Management Dashboards');
+    this.service.title.next('Dashboard');
+  }
+  setupValidations() {
+    this.form = this.formBuilder.group({
+      name: new FormControl(''),
+      user: new FormControl(''),
+      roles: new FormControl(''),
+      gridSize: new FormControl('')
+    });
   }
 }

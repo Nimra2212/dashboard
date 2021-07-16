@@ -17,11 +17,15 @@ export class HomePageComponent implements OnInit {
   }
   dashboardlist() {
     this.router.navigateByUrl('dashboard-list');
+    this.service.dialogueField.next(false)
     this.service.categoryName.next('Strategy Management Dashboards');
-    this.service.title.next('Dashboard')
+    this.service.title.next('Dashboard');
   }
   openDialog() {
     this.service.openDialog();
-   }
+  }
+  delete(i) {
+    this.cards.splice(i, 1);
+  }
 }
 // dashboard-list

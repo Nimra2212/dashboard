@@ -18,5 +18,8 @@ export class DashboardListComponent implements OnInit {
   openDialog(){
     this.service.openDialog();
   }
+  delete(i){
+    this.cards.splice(i,1)
+  }
 
 }

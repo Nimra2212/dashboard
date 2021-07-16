@@ -13,6 +13,7 @@ image = new BehaviorSubject('/assets/images/category-icon.svg')
 notifications = new BehaviorSubject('/assets/images/notifications-icon.svg');
 categoryName = new BehaviorSubject('Category')
 title = new BehaviorSubject('Category')
+dialogueField = new BehaviorSubject(true)
   constructor( public dialog: MatDialog) { }
 
 

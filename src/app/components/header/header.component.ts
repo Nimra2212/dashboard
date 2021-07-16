@@ -26,5 +26,6 @@ export class HeaderComponent implements OnInit {
   logoHome(){
 this.router.navigateByUrl('');
 this.service.categoryName.next('Category')
+this.service.dialogueField.next(true)
   }
 }
