@@ -89,11 +89,11 @@ body {
         align-items: center !important;
         .logo {
             padding-top: 0.6rem;
-            
+
             img {
                 height: 46px;
                 margin: 8px 0px 8px 0px !important;
-                cursor: pointer ;
+                cursor: pointer;
             }
         }
 
@@ -190,7 +190,7 @@ input {
         img {
             height: 18px;
         }
-        p { 
+        p {
             text-transform: uppercase;
             padding-left: 10px;
             color: var(--color);
@@ -304,13 +304,17 @@ mat-raised-button:hover {
     }
 }
 .bottomButtonDiv {
+    margin: 20px 0 20px 20px;
+    text-align: end;
     .buttonCreate {
         background-color: #6599ff;
         @include buttons;
+        margin-bottom: 5px;
     }
     .buttonCancel {
         background-color: #6598ff00;
         @include buttons;
+        margin-bottom: 5px;
     }
 }
 .newbtn {
@@ -374,7 +378,7 @@ mat-raised-button:hover {
                 }
             }
             h6 {
-                margin: 25px 0 10px 0;
+                margin: 25px 10px 10px 10px;
                 color: var(--color);
                 @include fonts;
                 position: relative;
@@ -446,7 +450,6 @@ mat-raised-button:hover {
 // other override custom material scss
 
 .mat-menu-panel {
-    min-width: 212px !important;
     max-width: 380px !important;
 }
 .mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
@@ -568,7 +571,7 @@ mat-form-field {
 .mat-menu-panel {
     background-color: var(--background-color);
     border: 1px solid var(--lite-color) !important ;
-    width: 200px !important;
+
     button {
         color: var(--text-color) !important;
     }

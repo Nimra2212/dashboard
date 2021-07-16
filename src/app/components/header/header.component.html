@@ -9,7 +9,7 @@
                 <img [src]="image" alt="">
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
                     <p class="notification">Notifications</p>
-                    <button class="notificationBtn" mat-menu-item fxLayout="row">
+                    <button class="notificationBtn" mat-menu-item fxLayout="row" style="width: 200px;">
                         <mat-icon style="font-size: 20px;"> message </mat-icon>
                         <div class="pDiv" fxLayout="column">
                             <p class="text">Text goes here...</p>
@@ -38,7 +38,7 @@
                     <button disableRipple mat-raised-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
                             class="material-icons">expand_more </span></button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
+                        <button mat-menu-item style="width: 180px">
                             <mat-icon> person </mat-icon> Profile
                         </button>
                         <button mat-menu-item>
