@@ -26,6 +26,7 @@ body {
     --card-border: rgb(198, 198, 198);
     --hover-color: #d4e3f2;
     --dot-color: black;
+    --card-text: #6599FF;
     .cardBottom {
         --background-color: rgba(153, 170, 202, 0.36);
     }
@@ -49,6 +50,8 @@ body {
     --card-border: rgb(91, 91, 91);
     --hover-color: #08173f;
     --dot-color: white;
+    --card-text: white;
+    --h6-color: #6599FF;
     .header2 {
         --header-color: #08173f;
     }
@@ -425,6 +428,7 @@ mat-raised-button:hover {
                 @include fonts;
                 text-align: left;
                 font-size: 14px;
+                color: var(--card-text) !important;
                 cursor: pointer;
             }
             img {
@@ -440,6 +444,9 @@ mat-raised-button:hover {
         }
     }
     mat-card:hover {
+        h6{
+            color: var(--h6-color) !important;
+        }
         .dropemenu {
             visibility: visible;
             opacity: 1;
