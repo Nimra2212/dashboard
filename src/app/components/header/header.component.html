@@ -1,6 +1,6 @@
 <mat-toolbar class="mat-toolbar">
     <div class="toolbarInner" fxLayout.md="row" fxLayout.xs="column">
-        <div class="logo" fxFlex.gt-sm="100%">
+        <div class="logo" (click)="logoHome()" fxFlex.gt-sm="100%">
             <img [src]="logo" alt="">
         </div>
         <div class="headerdrop" fxFlex.gt-sm="100%" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
@@ -33,7 +33,7 @@
                     <p class="lastButton">Show All</p>
                 </mat-menu>
             </div>
-            <div class="headerRight" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column">
+            <div class="headerRight" fxLayout.gt-md="row" fxLayout.md="row" fxLayout="column">
                 <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
                     <button disableRipple mat-raised-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
                             class="material-icons">expand_more </span></button>
@@ -53,9 +53,4 @@
         </div>
     </div>
 </mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav> </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+       

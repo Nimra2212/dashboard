@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-dashboard-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-list.component.scss']
 })
 export class DashboardListComponent implements OnInit {
-
-  constructor() { }
-
+ 
+  cards = [];
+  constructor( private service: ServicesService) {}
   ngOnInit(): void {
+    for (let i = 0; i < 4; i++) {
+      this.cards.push(i);
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   logo: string = '';
   disabled = false;
   
-  constructor(private service: ServicesService) {}
+  constructor(private service: ServicesService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.subject.subscribe((logo) => {
@@ -21,5 +22,8 @@ export class HeaderComponent implements OnInit {
     this.service.notifications.subscribe((image) => {
       this.image = image;
     });
+  }
+  logoHome(){
+this.router.navigateByUrl('')
   }
 }

@@ -1,1 +1,21 @@
-<p>dashboard-list works!</p>
+<div class="HomeDiv">
+    <div class="innerDiv" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px">
+        <mat-card fxFlex.gt-sm="18.4%" fxFlex.md="22.7%" fxFlex.sm="46.5%" fxFlex.gt-xs="29%" fxFlex.xs="29%"
+            *ngFor="let card of cards">
+            <div class="cardDiv" fxLayout="column">
+                <div class="dropemenu" [matMenuTriggerFor]="beforeMenu" fxLayout="row">
+                    <button class="button2" disableRipple mat-raised-button > ...</button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button  mat-menu-item> <mat-icon>edit</mat-icon> Edit</button>
+                        <button  mat-menu-item style="color: red !important;"> <mat-icon style="color: red !important;">delete</mat-icon>  Delete</button>
+                    </mat-menu>
+                </div>
+                <div class="cardTop emptycard" fxLayout="row">   
+                </div>
+            </div>
+            <div class="cardBottom">
+               <p>DASHBOARDS NAME GOES HERE</p>
+            </div>
+        </mat-card>
+    </div>
+</div>

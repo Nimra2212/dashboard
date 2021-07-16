@@ -13,6 +13,7 @@ export class Header2Component implements OnInit {
   public onClick(event: any): void {
       event.stopPropagation();
   }
+  categoryName :string = "";
   theme: Theme = 'dark-theme';  
   image: string = '';
   constructor(
@@ -26,6 +27,9 @@ export class Header2Component implements OnInit {
     this.service.image.subscribe((image) => {
       this.image = image;
     });
+    this.service.categoryName.subscribe((name)=>{
+      this.categoryName= name;
+    })
   }
   openDialog() {
     const dialogRef = this.dialog.open(DialogueComponent, {
@@ -66,7 +70,12 @@ export type Theme =  'dark-theme' | 'light-theme' ;
   styleUrls: ['./header2.component.scss'],
 })
 export class DialogueComponent implements OnInit {
+
   selectedLanguage:string = 'English';
   states: string[] = ['English', 'Arabic', 'French'];
-  ngOnInit() {}
+  constructor(){}
+
+  ngOnInit() {
+
+  }
 }

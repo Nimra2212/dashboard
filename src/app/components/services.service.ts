@@ -8,6 +8,7 @@ export class ServicesService {
 
 subject = new BehaviorSubject('/assets/images/logo.svg');
 image = new BehaviorSubject('/assets/images/category-icon.svg')
-notifications = new BehaviorSubject('/assets/images/notifications-icon.svg')
+notifications = new BehaviorSubject('/assets/images/notifications-icon.svg');
+categoryName = new BehaviorSubject('Category')
   constructor() { }
 }

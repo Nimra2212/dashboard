@@ -89,9 +89,11 @@ body {
         align-items: center !important;
         .logo {
             padding-top: 0.6rem;
+            
             img {
                 height: 46px;
                 margin: 8px 0px 8px 0px !important;
+                cursor: pointer ;
             }
         }
 
@@ -119,7 +121,7 @@ body {
                     margin: 0px 10px 0px 10px;
                 }
                 .drope {
-                    width: 50%;
+                    width: 100%;
                     justify-content: flex-end;
                     padding: 0 !important;
                     color: var(--text-color);
@@ -153,7 +155,7 @@ body {
     line-height: 15px !important;
     cursor: pointer !important;
     font-size: 12px !important;
-    @include fonts ;
+    @include fonts;
 }
 .text2 {
     cursor: pointer;
@@ -198,12 +200,13 @@ input {
     }
     .headerInnerright {
         margin-right: 20px;
-        align-items: center !important;
+        align-items: flex-end !important;
         justify-content: flex-end;
         button {
             border-radius: 100px;
             margin-left: 15px;
             line-height: 30px;
+            margin-bottom: 7px;
             font-size: 12px;
             color: #e6eef5;
             text-transform: uppercase;
@@ -230,6 +233,12 @@ mat-raised-button:hover {
 }
 .mat-raised-button-focus-overlay {
     background-color: transparent !important;
+}
+.modeButtons {
+    padding: 0px;
+    margin-left: 20px;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .dialogue {
@@ -340,7 +349,7 @@ mat-raised-button:hover {
         border-radius: 15px;
         background-color: var(--background-color);
         border: 1px solid var(--card-border);
-        cursor: pointer;
+
         .cardDiv {
             height: auto;
             width: 100%;
@@ -348,6 +357,7 @@ mat-raised-button:hover {
             border-top-right-radius: 15px;
             text-align: center;
             position: relative;
+            cursor: pointer;
             .dropemenu {
                 visibility: hidden;
                 opacity: 1;
@@ -371,6 +381,10 @@ mat-raised-button:hover {
                 font-size: 14px;
                 font-weight: 800;
                 text-transform: uppercase;
+            }
+            .emptycard {
+                height: 100px !important;
+                margin-top: 50px;
             }
             .cardTop {
                 height: fit-content;
@@ -401,6 +415,14 @@ mat-raised-button:hover {
             align-items: center;
             justify-content: center;
             position: relative;
+            p {
+                padding: 25px 10px 25px 10px !important;
+                margin: 0 !important;
+                @include fonts;
+                text-align: left;
+                font-size: 14px;
+                cursor: pointer;
+            }
             img {
                 background-size: cover;
                 background-position: top center;
