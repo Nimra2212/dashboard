@@ -4,9 +4,9 @@
         <mat-card fxFlex.gt-sm="18.4%" fxFlex.md="22.7%" fxFlex.sm="46.5%" fxFlex.gt-xs="29%" fxFlex.xs="29%"
             *ngFor="let card of cards">
             <div class="cardDiv" fxLayout="column">
-                <div class="dropemenu" [matMenuTriggerFor]="menu" fxLayout="row">
+                <div class="dropemenu" [matMenuTriggerFor]="beforeMenu" fxLayout="row">
                     <button class="button2" disableRipple mat-raised-button > ...</button>
-                    <mat-menu #menu="matMenu">
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
                         <button  mat-menu-item> <mat-icon>edit</mat-icon> Edit</button>
                         <button  mat-menu-item style="color: red !important;"> <mat-icon style="color: red !important;">delete</mat-icon>  Delete</button>
                     </mat-menu>

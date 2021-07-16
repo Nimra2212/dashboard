@@ -5,18 +5,48 @@
         </div>
         <div class="headerdrop" fxFlex.gt-sm="100%" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
             fxLayoutAlign="flex-end">
-            <div class="headerdropProfile">
+            <div class="headerdropProfile" [matMenuTriggerFor]="beforeMenu">
                 <img [src]="image" alt="">
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <p class="notification">Notifications</p>
+                    <button class="notificationBtn" mat-menu-item fxLayout="row">
+                        <mat-icon style="font-size: 20px;"> message </mat-icon>
+                        <div class="pDiv" fxLayout="column">
+                            <p class="text">Text goes here...</p>
+                            <p class="text2">Dec 12, 2020</p>
+                        </div>
+                    </button>
+                    <button class="notificationBtn" mat-menu-item fxLayout="row">
+                        <mat-icon style="font-size: 20px;"> message </mat-icon>
+                        <div class="pDiv" fxLayout="column">
+                            <p class="text">Text goes here...</p>
+                            <p class="text2">Dec 12, 2020</p>
+                        </div>
+                    </button>
+                    <button class="notificationBtn" mat-menu-item fxLayout="row">
+                        <mat-icon style="font-size: 20px;"> message </mat-icon>
+                        <div class="pDiv" fxLayout="column">
+                            <p class="text">Text goes here...</p>
+                            <p class="text2">Dec 12, 2020</p>
+                        </div>
+                    </button>
+                    <p class="lastButton">Show All</p>
+                </mat-menu>
             </div>
-            <div class="headerRight" fxLayout.md="row" fxLayout.sm="column"
-                fxLayout.xs="column">
+            <div class="headerRight" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column">
                 <div class="drope" [matMenuTriggerFor]="menu" fxLayout="row">
                     <button disableRipple mat-raised-button> <img src="/assets/images/user.png" alt=""> {{name}} <span
                             class="material-icons">expand_more </span></button>
                     <mat-menu #menu="matMenu">
-                        <button  mat-menu-item> <mat-icon> person </mat-icon> Profile</button>
-                        <button  mat-menu-item> <mat-icon> settings </mat-icon> Setting</button>
-                        <button  mat-menu-item style="color: red !important;"> <mat-icon style="color: red !important;"> logout </mat-icon> Logout</button>
+                        <button mat-menu-item>
+                            <mat-icon> person </mat-icon> Profile
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon> settings </mat-icon> Setting
+                        </button>
+                        <button mat-menu-item style="color: red !important;">
+                            <mat-icon style="color: red !important;"> logout </mat-icon> Logout
+                        </button>
                     </mat-menu>
                 </div>
             </div>
