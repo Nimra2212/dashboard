@@ -114,7 +114,8 @@ export class DialogueComponent implements OnInit {
       name: new FormControl(''),
       user: new FormControl(''),
       roles: new FormControl(''),
-      gridSize: new FormControl('')
+      gridSize: new FormControl(''),
+      fieldName : new FormControl('')
     });
   }
 }
