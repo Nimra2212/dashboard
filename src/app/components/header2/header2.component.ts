@@ -79,7 +79,7 @@ export type Theme = 'dark-theme' | 'light-theme';
 export class DialogueComponent implements OnInit {
   form: FormGroup;
   dialoguefield = false;
-  languages = [1];
+  languages = [];
   title: string = '';
   selectedLanguage: string = 'English';
   states = ['English', 'Arabic', 'French', 'Chinese'];
@@ -99,6 +99,9 @@ export class DialogueComponent implements OnInit {
       this.languages.push(i);
       ++i;
     }
+  }
+  deleteLanguage(i){
+    this.languages.splice(i,1)
   }
   create(){
     this.router.navigateByUrl('dashboard-list');

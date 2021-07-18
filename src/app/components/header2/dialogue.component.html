@@ -5,8 +5,8 @@
     </div>
     <div class="dialogueTabs">
         <form [formGroup]="form">
-        <mat-tab-group [disableRipple]="true" animationDuration="0ms">
-           
+            <mat-tab-group [disableRipple]="true" animationDuration="0ms">
+
                 <mat-tab fxLayoutGap="20px" label="GENERAL INFO" fxLayout="column">
                     <div fxLayout="column">
                         <div *ngIf="dialoguefield!==true" class="formTitle check" fxLayout="column">
@@ -15,20 +15,46 @@
                                 <input name="gridSize" type="text" matInput required>
                             </mat-form-field>
                         </div>
-                        <div *ngFor="let language of languages">
+                        <div fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px"
+                            fxLayout="row" class="formTitle">
+                            <div fxLayout="column" class="check">
+                                <p>Language</p>
+                                <mat-form-field appearance="outline">
+                                    <mat-select>
+                                        <mat-option value="English">English
+                                        </mat-option>
+                                        <mat-option value="Arabic">Arabic
+                                        </mat-option>
+                                        <mat-option value="French">French
+                                        </mat-option>
+                                        <mat-option value="Chinese">Chinese
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="column" class="check" style="width: 100%;">
+                                <p>Category name</p>
+                                <mat-form-field appearance="outline">
+                                    <input autocomplete="off" name="name" type="text" matInput formControlName="name"
+                                        required>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                        <div *ngFor="let language of languages; let i = index">
                             <div fxFlex.gt-sm="100%" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="20px"
                                 fxLayout="row" class="formTitle">
                                 <div fxLayout="column" class="check">
                                     <p>Language</p>
                                     <mat-form-field appearance="outline">
-                                        <mat-select >
-                                            <mat-option value = "English" >English
+                                        <mat-select>
+                                            <mat-option value="English">English
                                             </mat-option>
-                                            <mat-option value = "Arabic" >Arabic
+                                            <mat-option value="Arabic">Arabic
                                             </mat-option>
-                                            <mat-option value = "French" >French
+                                            <mat-option value="French">French
                                             </mat-option>
-                                            <mat-option value = "Chinese" >Chinese
+                                            <mat-option value="Chinese">Chinese
                                             </mat-option>
                                         </mat-select>
                                     </mat-form-field>
@@ -39,6 +65,9 @@
                                         <input autocomplete="off" name="name" type="text" matInput
                                             formControlName="name" required>
                                     </mat-form-field>
+                                </div>
+                                <div fxLayoutAlign="center center">
+                                    <mat-icon (click)="deleteLanguage(i)" style="color: white; cursor: pointer;">delete</mat-icon>
                                 </div>
                             </div>
                         </div>
@@ -64,15 +93,15 @@
                     </div>
 
                 </mat-tab>
-           
-        </mat-tab-group>
-        <div class="bottomButtonDiv">
-            <button mat-button mat-dialog-close (click)="create()" class="buttonCreate" [disabled]="!form.valid"> <img
-                    src="/assets/images/add-icon.svg" alt="">
-                Create</button>
-            <button mat-button mat-dialog-close class="buttonCancel"> <img src="/assets/images/add-icon.svg" alt="">
-                Cancel</button>
-        </div>
-    </form>
+
+            </mat-tab-group>
+            <div class="bottomButtonDiv">
+                <button mat-button mat-dialog-close (click)="create()" class="buttonCreate" [disabled]="!form.valid">
+                    <img src="/assets/images/add-icon.svg" alt="">
+                    Create</button>
+                <button mat-button mat-dialog-close class="buttonCancel"> <img src="/assets/images/add-icon.svg" alt="">
+                    Cancel</button>
+            </div>
+        </form>
     </div>
 </div>
