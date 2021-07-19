@@ -95,10 +95,7 @@ export class DialogueComponent implements OnInit {
     })
   }
   addLanguages() {
-    for (let i = 1; i < 2; i++) {
-      this.languages.push(i);
-      ++i;
-    }
+    this.languages.push(1)
   }
   deleteLanguage(i){
     this.languages.splice(i,1)
@@ -115,7 +112,7 @@ export class DialogueComponent implements OnInit {
       user: new FormControl(''),
       roles: new FormControl(''),
       gridSize: new FormControl(''),
-      fieldName : new FormControl('')
+      fieldName : new FormControl('') 
     });
   }
 }
